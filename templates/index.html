@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>The Forexify</title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap"
+        rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap"
+        rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/static/css/styles.css" rel="stylesheet" />
+    <style>
+        .countdown-section {
+            margin-top: 4.5rem;
+            display: flex;
+            background-color: #ffd405;
+            align-items: center;
+            justify-content: center;
+            /* border-radius: 8px; */
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .countdown-header {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .counter-div {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            justify-content: center;
+            padding: 24px 0;
+        }
+
+        .counter-element {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .number-div {
+            background-color: #012a2f;
+            border-radius: 10px;
+            width: 80px;
+            padding: 12px 0;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .element-text {
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #012a2f;
+        }
+
+        .counter-animate {
+            animation: slideInFromTop 0.5s ease-in-out;
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 450px) {
+            .number-div {
+                width: 60px;
+            }
+
+            .counter-div {
+                gap: 5px;
+            }
+
+            .et-desktop {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 451px) {
+            .et-mobile {
+                display: none;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-80%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+
+        .navbar-brand {
+            /* font-size: 30px; */
+            background: -webkit-linear-gradient(#0d86f7, #14d45d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="#page-top">THE FOREXIFY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                    <!-- <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li> -->
+                </ul>
+                <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal"
+                    data-bs-target="#feedbackModal">
+                    <span class="d-flex align-items-center">
+                        <i class="bi-chat-text-fill me-2"></i>
+                        <span>Book your Slot Now</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Countdown timer -->
+    <!-- <div class="container-fluid countdown-section">
+        <div class="text-center">
+            <h2 class="mt-3" style="font-family: 'Poppins', sans-serif;">Time to Start the Ultimate <strong
+                    style="color: red;">Webinar</strong></h2>
+            <div id="countDiv" class="counter-div">
+                <div class="counter-element">
+                    <div class="number-div">
+                        <div class="days"></div>
+                    </div>
+                    <p class="element-text">Days</p>
+                </div>
+                <div class="counter-element">
+                    <div class="number-div">
+                        <div class="hours"></div>
+                    </div>
+                    <p class="element-text">Hours</p>
+                </div>
+                <div class="counter-element">
+                    <div class="number-div">
+                        <div class="minutes"></div>
+                    </div>
+                    <p class="element-text et-mobile">Min.</p>
+                    <p class="element-text et-desktop">Minutes</p>
+                </div>
+                <div class="counter-element">
+                    <div class="number-div">
+                        <div class="seconds"></div>
+                    </div>
+                    <p class="element-text et-mobile">Sec.</p>
+                    <p class="element-text et-desktop">Seconds</p>
+                </div>
+            </div>
+            <p style="font-family: 'Poppins', sans-serif; font-size: large;">Register your Slot Now, Limited Seats only!
+            </p>
+            <button class="btn btn-primary rounded-pill px-3 mb-3" data-bs-toggle="modal"
+                data-bs-target="#feedbackModal">
+                <span class="d-flex align-items-center">
+                    <i class="bi-chat-text-fill me-2"></i>
+                    <span>Book your Slot Now</span>
+                </span>
+            </button>
+        </div>
+    </div> -->
+
+    <!-- Mashead header-->
+    <header class="masthead">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <!-- Mashead text and app badges-->
+                    <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                        <h1 class="display-1 lh-1 mb-3">All in One Trading Course</h1>
+                        <p class="lead fw-normal text-muted mb-5">Detaild calsses on Forex, Stocks, F&O, Cryptocurrency
+                            & Money Management.</p>
+                        <div class="d-flex flex-column flex-lg-row align-items-center">
+
+                            <!-- <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge"
+                                    src="/static/assets/img/google-play-badge.svg" alt="..." /></a>
+                            <a href="#!"><img class="app-badge" src="/static/assets/img/app-store-badge.svg"
+                                    alt="..." /></a> -->
+                            <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal"
+                                data-bs-target="#feedbackModal">
+                                <span class="d-flex align-items-center">
+                                    <i class="bi-chat-text-fill me-2"></i>
+                                    <span>Book your Slot Now</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Masthead device mockup feature-->
+                    <div class="masthead-device-mockup">
+                        <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="circleGradient" gradientTransform="rotate(45)">
+                                    <stop class="gradient-start-color" offset="0%"></stop>
+                                    <stop class="gradient-end-color" offset="100%"></stop>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="50"></circle>
+                        </svg>
+
+                        <svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03"
+                                transform="translate(120.42 -49.88) rotate(45)"></rect>
+                            <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03"
+                                transform="translate(-49.88 120.42) rotate(-45)"></rect>
+                        </svg><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50"></circle>
+                        </svg>
+                        <div class="device-wrapper">
+                            <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                <div class="screen bg-black">
+                                    <!-- PUT CONTENTS HERE:-->
+                                    <!-- * * This can be a video, image, or just about anything else.-->
+                                    <!-- * * Set the max width of your media to 100% and the height to-->
+                                    <!-- * * 100% like the demo example below.-->
+                                    <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%">
+                                        <source src="/static/assets/video/trading-video.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quote/testimonial aside-->
+    <aside class="text-center bg-gradient-primary-to-secondary">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-xl-8">
+                    <div class="h2 fs-1 text-white mb-4">"The most important thing we solve is Knowledge, Our Team is totally focused on Gaining Knowledge."</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- App features section-->
+
+
+
+    <!-- Header -->
+    <header class="bg-success text-center py-5 mt-5 mb-4">
+        <div class="container">
+            <h1 class="fw-light text-white">Operating Team Behind</h1>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="col-xl-3 col-md-6 mb-4 mx-auto">
+            <div class="card border-0 shadow">
+                <img src="/static/assets/img/suvro.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Suvrojyoti Mandal</h5>
+                    <div class="card-text text-black-50">Founder & CEO</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Team Member 1 -->
+            <!-- Team Member 2 -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="/static/assets/img/abhirup.jpg" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Abhirup Ghosh</h5>
+                        <div class="card-text text-black-50">COO & CMO</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="/static/assets/img/sagnik.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Sagnik Datta</h5>
+                        <div class="card-text text-black-50">CFO</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 4 -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="/static/assets/img/ishan.jpg" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Ishan Nath</h5>
+                        <div class="card-text text-black-50">CIO & HR</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-0 shadow">
+                    <img src="/static/assets/img/sayantan-img.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-0">Sayantan Biswas</h5>
+                        <div class="card-text text-black-50">CTO</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+
+    <div id="generic_price_table">   
+        <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--PRICE HEADING START-->
+                            <div class="price-heading clearfix">
+                                <h1>Forexify Pricing</h1>
+                            </div>
+                            <!--//PRICE HEADING END-->
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    
+                    <!--BLOCK ROW START-->
+                    <div class="row">
+                        <center>
+                        <!-- <div class="col-md-4">
+                        
+                            <div class="generic_content clearfix">
+                                
+                                <div class="generic_head_price clearfix">
+                                
+                                    <div class="generic_head_content clearfix">
+                                    
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>Basic</span>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="generic_price_tag clearfix">	
+                                        <span class="price">
+                                            <span class="sign">$</span>
+                                            <span class="currency">99</span>
+                                            <span class="cent">.99</span>
+                                            <span class="month">/MON</span>
+                                        </span>
+                                    </div>
+                                    
+                                </div>                          
+                                
+                                <div class="generic_feature_list">
+                                    <ul>
+                                        <li><span>2GB</span> Bandwidth</li>
+                                        <li><span>150GB</span> Storage</li>
+                                        <li><span>12</span> Accounts</li>
+                                        <li><span>7</span> Host Domain</li>
+                                        <li><span>24/7</span> Support</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="generic_price_btn clearfix">
+                                    <a class="" href="">Sign up</a>
+                                </div>
+                                
+                            </div>
+                                
+                        </div> -->
+                        
+                        <div class="col-md-4">
+                        
+                            <!--PRICE CONTENT START-->
+                            <div class="generic_content active clearfix">
+                                
+                                <!--HEAD PRICE DETAIL START-->
+                                <div class="generic_head_price clearfix">
+                                
+                                    <!--HEAD CONTENT START-->
+                                    <div class="generic_head_content clearfix">
+                                    
+                                        <!--HEAD START-->
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>Standard</span>
+                                        </div>
+                                        <!--//HEAD END-->
+                                        
+                                    </div>
+                                    <!--//HEAD CONTENT END-->
+                                    
+                                    <!--PRICE START-->
+                                    <div class="generic_price_tag clearfix">	
+                                        <span class="price">
+                                            <div class="month">Admission</div>
+                                            <span class="sign">₹</span>
+                                            <span class="currency">1500</span>
+                                        </span>
+                                    </div>
+                                    <hr>
+                                    <div class="generic_price_tag clearfix">	
+                                        <span class="price">
+                                            <span class="sign">₹</span>
+                                            <span class="currency">800</span>
+                                            <span class="month">/M</span>
+                                        </span>
+                                    </div>
+                                    <!--//PRICE END-->
+                                    
+                                </div>                            
+                                <!--//HEAD PRICE DETAIL END-->
+                                
+                                <!--FEATURE LIST START-->
+                                <div class="generic_feature_list">
+                                    <ul>
+                                        <li><span>Forex</span> Trading</li>
+                                        <li><span>Crypto</span> Trading</li>
+                                        <li><span>Stock</span> Trading</li>
+                                        <li><span>F&O</span> Trading</li>
+                                        <li><span>Intraday</span> Trading</li>
+                                        <li><span>Long Term</span> Investment</li>
+                                        <li><span>Finance & Money</span> Management</li>
+                                    </ul>
+                                </div>
+                                <!--//FEATURE LIST END-->
+                                
+                                <!--BUTTON START-->
+                                <div class="generic_price_btn clearfix">
+                                    <a class="" data-bs-toggle="modal"
+                                    data-bs-target="#feedbackModal" href="">Book Now</a>
+                                </div>
+                                <!--//BUTTON END-->
+                                
+                            </div>
+                            <!--//PRICE CONTENT END-->
+                                
+                        </div>
+
+                        <!-- <div class="col-md-4">
+                        
+                            <div class="generic_content clearfix">
+                                
+                                <div class="generic_head_price clearfix">
+                                
+                                    <div class="generic_head_content clearfix">
+                                    
+                                        <div class="head_bg"></div>
+                                        <div class="head">
+                                            <span>Unlimited</span>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="generic_price_tag clearfix">	
+                                        <span class="price">
+                                            <span class="sign">$</span>
+                                            <span class="currency">299</span>
+                                            <span class="cent">.99</span>
+                                            <span class="month">/MON</span>
+                                        </span>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="generic_feature_list">
+                                    <ul>
+                                        <li><span>2GB</span> Bandwidth</li>
+                                        <li><span>150GB</span> Storage</li>
+                                        <li><span>12</span> Accounts</li>
+                                        <li><span>7</span> Host Domain</li>
+                                        <li><span>24/7</span> Support</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="generic_price_btn clearfix">
+                                    <a class="" href="">Sign up</a>
+                                </div>
+                                
+                            </div>
+                                
+                        </div> -->
+                        </center>
+                    </div>
+                    
+                </div>
+            </section>  
+
+    <!-- Basic features section-->
+    <section class="bg-light">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+                <div class="col-12 col-lg-5">
+                    <h2 class="display-4 lh-1 mb-4">Enter a new age of Trading</h2>
+                    <p class="lead fw-normal text-muted mb-5 mb-lg-0">Trading is very interesting subject to learn and also earn simultaneously. we all should
+                        learn this Trading before it's too late. So get started now!
+                    </p>
+                </div>
+                <div class="col-sm-8 col-md-6">
+                    <div class="px-5 px-sm-0"><img class="img-fluid" style="border-radius: 20px;" src="https://images.unsplash.com/photo-1620266757065-5814239881fd" alt="..." /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="bg-black text-center py-5">
+        <div class="container px-5">
+            <div class="text-white-50 small">
+                <div class="mb-2">&copy; The Forexify 2023. All Rights Reserved.</div>
+                <a href="#!">Privacy</a>
+                <span class="mx-1">&middot;</span>
+                <a href="#!">Terms</a>
+                <span class="mx-1">&middot;</span>
+                <a href="#!">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Feedback Modal-->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                    <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Book your Slot</h5>
+                    <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body border-0 p-4">
+
+                    <form method="post" id="contactForm"> {% csrf_token %}
+
+                        <!-- Name input-->
+                        {% for field in form %}
+                        <div class="form-floating mb-3">
+                            {{field}}
+                            <label for="name">{{field.label_tag}}</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        {% endfor %}
+
+                        <!-- Email address input-->
+                        <!-- <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                                data-sb-validations="required,email" />
+                            <label for="email">Email address</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div> -->
+
+                        <!-- Phone number input-->
+                        <!-- <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+                                data-sb-validations="required" />
+                            <label for="phone">Phone number</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
+                            </div>
+                        </div> -->
+
+                        <!-- Message input-->
+                        <!-- <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" type="text"
+                                placeholder="Enter your message here..." style="height: 10rem"
+                                data-sb-validations="required"></textarea>
+                            <label for="message">Message</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                        </div> -->
+                        <!-- Submit Button-->
+                        <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg"
+                                type="submit">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script>
+        function timingCalc(endtime) {
+
+            var timeTotal = Date.parse(endtime) - Date.now(),
+                timeSeconds = Math.floor((timeTotal / 1000) % 60),
+                timeMinutes = Math.floor((timeTotal / 1000 / 60) % 60),
+                timeHours = Math.floor((timeTotal / (1000 * 60 * 60)) % 24),
+                timeDays = Math.floor(timeTotal / (1000 * 60 * 60 * 24));
+
+            return {
+                total: timeTotal,
+                seconds: timeSeconds,
+                minutes: timeMinutes,
+                hours: timeHours,
+                days: timeDays
+            };
+        }
+
+        function animateCounter(selector, targetValue) {
+            var $element = $(selector);
+            var currentValue = parseInt($element.text(), 10);
+
+            if (currentValue === targetValue) {
+                return;
+            }
+
+            $element.addClass("counter-animate");
+            $element.text(targetValue);
+
+            setTimeout(function () {
+                $element.addClass("show");
+            }, 10);
+
+            setTimeout(function () {
+                $element.removeClass("counter-animate show");
+            }, 500);
+        }
+
+        function startCalc(endtime) {
+            var timeTotal = timingCalc(endtime);
+
+            animateCounter(".days", timeTotal.days);
+            animateCounter(".hours", timeTotal.hours);
+            animateCounter(".minutes", timeTotal.minutes);
+            animateCounter(".seconds", timeTotal.seconds);
+
+            if (timeTotal.total <= 0) {
+                clearInterval(timingNow);
+            }
+        }
+
+        var DeadLine = new Date(Date.parse("1 Sep 2023 00:00:00 GMT"));
+
+        setInterval(function () {
+            startCalc(DeadLine);
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
